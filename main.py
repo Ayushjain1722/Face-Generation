@@ -86,10 +86,7 @@ train_transforms = [
     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
 ]
 
-dataloader = DataLoader(
-    CelebADataset(
-        "../../data/%s" % dataset_name, transforms_=train_transforms, mode="train", attributes=selected_attrs
-    ),
+dataloader = DataLoader(CelebADataset("../../data/%s" % dataset_name, transforms_=train_transforms, mode="train", attributes=selected_attrs),
     batch_size=batch_size,
     shuffle=True,
     num_workers=n_cpu,
